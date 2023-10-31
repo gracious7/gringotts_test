@@ -25,6 +25,7 @@ import ImageArchitect2 from "assets/img/ImageArchitect2.png";
 import ImageArchitect3 from "assets/img/ImageArchitect3.png";
 // Custom components
 import Card from "components/Card/Card";
+// import searchicon from ".../assets/img/avatars/searchicon.png";
 import CardBody from "components/Card/CardBody";
 import CardHeader from "components/Card/CardHeader";
 import React from "react";
@@ -48,39 +49,64 @@ function LandingPage() {
   const bgProfile = useColorModeValue("hsla(0,0%,100%,.8)", "navy.800");
   const borderProfileColor = useColorModeValue("white", "transparent");
   const emailColor = useColorModeValue("gray.400", "gray.300");
+  const searchBoxStyles = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'relative',
+    maxWidth: '300px', // Set a maximum width for the input field
+  };
 
+  const searchIconStyles = {
+    position: 'absolute',
+    left: '10px', // Adjust the left position of the search icon
+  };
+
+  const inputStyles = {
+    paddingLeft: '30px', // Ensure some space for the search icon
+    width: '100%',
+  };
   return (
     <Flex direction="column" pt={{ base: "120px", md: "75px", lg: "100px" }}>
-      <div className="text-[red] font-bold texth1">Hello </div>
-      <Flex
-        direction={{ sm: "column", md: "row" }}
-        mb="24px"
-        maxH="330px"
-        justifyContent={{ sm: "center", md: "space-between" }}
-        align="center"
-        backdropFilter="blur(21px)"
-        boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
-        border="1.5px solid"
-        borderColor={borderProfileColor}
-        bg={bgProfile}
-        p="24px"
-        borderRadius="20px"
-      >
+      {/* <div className="text-[red] font-bold texth1">Hello </div> */}
+     
         <Flex
-          align="center"
-          mb={{ sm: "10px", md: "0px" }}
           direction={{ sm: "column", md: "row" }}
-          w={{ sm: "100%" }}
-          textAlign={{ sm: "center", md: "start" }}
+          mb="24px"
+          maxH="330px"
+          justifyContent={{ sm: "center", md: "space-between" }}
+          align="center"
+          backdropFilter="blur(21px)"
+          boxShadow="0px 2px 5.5px rgba(0, 0, 0, 0.02)"
+          border="1.5px solid"
+          borderColor={borderProfileColor}
+          bg={bgProfile}
+          p="24px"
+          borderRadius="20px"
         >
-          <Avatar
+          <Flex
+            align="center"
+            mb={{ sm: "10px", md: "0px" }}
+            direction={{ sm: "column", md: "row" }}
+            w={{ sm: "100%" }}
+            textAlign={{ sm: "center", md: "start" }}
+          >
+
+            <div style={{ textAlign: 'center', marginLeft: '500px' }}>
+              <div style={searchBoxStyles}>
+                {/* <img  alt="Search Icon" style={searchIconStyles} /> */}
+                <input type="text" placeholder="Institute Name" style={inputStyles} />
+              </div>
+            </div>
+           
+            {/* <Avatar
             me={{ md: "22px" }}
             src={avatar5}
             w="80px"
             h="80px"
             borderRadius="15px"
-          />
-          <Flex direction="column" maxWidth="100%" my={{ sm: "14px" }}>
+          /> */}
+            {/* <Flex direction="column" maxWidth="100%" my={{ sm: "14px" }}>
             <Text
               fontSize={{ sm: "lg", lg: "xl" }}
               color={textColor}
@@ -96,13 +122,13 @@ function LandingPage() {
             >
               alec@simmmple.com
             </Text>
+          </Flex> */}
           </Flex>
-        </Flex>
-        <Flex
-          direction={{ sm: "column", lg: "row" }}
-          w={{ sm: "100%", md: "50%", lg: "auto" }}
-        >
-          <Button p="0px" bg="transparent" variant="no-effects">
+          <Flex
+            direction={{ sm: "column", lg: "row" }}
+            w={{ sm: "100%", md: "50%", lg: "auto" }}
+          >
+            {/* <Button p="0px" bg="transparent" variant="no-effects">
             <Flex
               align="center"
               w={{ sm: "100%", lg: "135px" }}
@@ -118,8 +144,8 @@ function LandingPage() {
                 OVERVIEW
               </Text>
             </Flex>
-          </Button>
-          <Button p="0px" bg="transparent" variant="no-effects">
+          </Button> */}
+            {/* <Button p="0px" bg="transparent" variant="no-effects">
             <Flex
               align="center"
               w={{ lg: "135px" }}
@@ -134,8 +160,8 @@ function LandingPage() {
                 TEAMS
               </Text>
             </Flex>
-          </Button>
-          <Button p="0px" bg="transparent" variant="no-effects">
+          </Button> */}
+            {/* <Button p="0px" bg="transparent" variant="no-effects">
             <Flex
               align="center"
               w={{ lg: "135px" }}
@@ -149,11 +175,11 @@ function LandingPage() {
                 PROJECTS
               </Text>
             </Flex>
-          </Button>
+          </Button> */}
+          </Flex>
         </Flex>
-      </Flex>
 
-      <Grid templateColumns={{ sm: "1fr", xl: "repeat(3, 1fr)" }} gap="22px">
+        {/* <Grid templateColumns={{ sm: "1fr", xl: "repeat(3, 1fr)" }} gap="22px">
         <Card p="16px">
           <CardHeader p="12px 5px" mb="12px">
             <Text fontSize="lg" color={textColor} fontWeight="bold">
@@ -485,8 +511,8 @@ function LandingPage() {
             </Flex>
           </CardBody>
         </Card>
-      </Grid>
-      <Card p="16px" my="24px">
+      </Grid> */}
+        {/* <Card p="16px" my="24px">
         <CardHeader p="12px 5px" mb="12px">
           <Flex direction="column">
             <Text fontSize="lg" color={textColor} fontWeight="bold">
@@ -642,7 +668,7 @@ function LandingPage() {
             </Button>
           </Grid>
         </CardBody>
-      </Card>
+      </Card> */}
     </Flex>
   );
 }
