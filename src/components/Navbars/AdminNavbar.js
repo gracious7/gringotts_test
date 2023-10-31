@@ -131,7 +131,10 @@ export default function AdminNavbar(props) {
           <Breadcrumb>
             <BreadcrumbItem color={mainText}>
               <BreadcrumbLink href="#" color={secondaryText}>
-                Pages
+                 {/* Pages */}
+                 <center>
+                  <h1>NIRF 2.0</h1>
+                 </center>
               </BreadcrumbLink>
             </BreadcrumbItem>
 
